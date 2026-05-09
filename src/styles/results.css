@@ -207,13 +207,20 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+  
   }
   
   .header-left h2 {
     font-size: 2.5rem;
+    
   }
   
   .result-number {
     font-size: 2.8rem;
   }
+
+  .results-header h2 {
+       
+        margin-left: 38px;
+    }
 }
