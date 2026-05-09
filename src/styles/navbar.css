@@ -1,4 +1,3 @@
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -15,13 +14,14 @@
 .nav-left {
   display: flex;
   align-items: center;
+  
 }
 
 .logo-img {
-  width: 48px;
-  height: 48px;
+  height: 80px;
+  width: 90px;
   object-fit: contain;
-  border-radius: 8px;
+  display: block;
 }
 
 /* ─── DESKTOP LINKS ──────────────────────────── */
@@ -89,7 +89,7 @@
 
 /* ─── HAMBURGER BUTTON ───────────────────────── */
 .hamburger {
-  display: none;         /* hidden on desktop */
+  display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -124,7 +124,7 @@
 
 /* ─── MOBILE MENU ────────────────────────────── */
 .mobile-menu {
-  display: none;          /* hidden by default */
+  display: none;
   flex-direction: column;
   background: #0f172a;
   overflow: hidden;
@@ -132,11 +132,10 @@
   transition: max-height 0.4s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   position: sticky;
-  top: 85px;              /* sits just below navbar */
+  top: 85px;
   z-index: 999;
 }
 
-/* when .open is added via React state */
 .mobile-menu.open {
   display: flex;
   max-height: 500px;
@@ -156,7 +155,6 @@
   color: white;
 }
 
-/* GET STARTED inside mobile menu */
 .mobile-menu .mobile-cta {
   margin: 16px 8% 20px;
   padding: 14px;
@@ -180,12 +178,10 @@
     padding: 14px 5%;
   }
 
-  /* hide desktop links */
   .nav-links {
     display: none;
   }
 
-  /* hide desktop CTA button, show hamburger */
   .btn {
     display: none;
   }
@@ -194,8 +190,9 @@
     display: flex;
   }
 
-  .logo-img {
-    width: 40px;
-    height: 40px;
-  }
+ .logo-img {
+  height: 40px;
+  width: 45px;
+  max-width: 130px;
+}
 }

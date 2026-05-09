@@ -82,15 +82,15 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.4s ease;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+  /* box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25); */
 }
 
-.hero-right .btn:hover {
+/* .hero-right .btn:hover {
   transform: translateY(-4px);
   box-shadow:
     0 14px 40px rgba(139, 92, 246, 0.35),
     0 0 30px rgba(59, 130, 246, 0.25);
-}
+} */
 
 /* ─── SERVICES ───────────────────────────────── */
 .services {
@@ -220,8 +220,8 @@
 .why-card:hover {
   background: rgba(255, 255, 255, 0.05);
   transform: translateY(-10px);
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  /* border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); */
 }
 
 .why-icon-box {

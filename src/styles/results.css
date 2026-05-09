@@ -49,6 +49,7 @@
   font-size: 3rem;
   margin-bottom: 15px;
   background: linear-gradient(135deg,#8b5cf6,#3b82f6);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
@@ -220,7 +221,6 @@
   }
 
   .results-header h2 {
-       
         margin-left: 38px;
     }
 }

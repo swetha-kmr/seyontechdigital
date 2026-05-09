@@ -94,7 +94,7 @@ _Sent from Seyon Tech website_
           <div className="appt-header">
             <div className="appt-icon-box"><MdCalendarToday /></div>
             <div>
-              <h4>Book an Appointment For AI Automation Software</h4>
+              <h4>Book an Appointment</h4>
               <p>Fill in the form below to book your slot.</p>
             </div>
           </div>
@@ -141,6 +141,8 @@ _Sent from Seyon Tech website_
             <div className="custom-select-wrapper">
               <select name="service" value={formData.service} onChange={handleChange}>
                 <option value="" disabled>Choose a service</option>
+                <option>Web Development</option>
+                <option>Digital Marketing</option>
                 <option>AI Calling Software</option>
                 <option>AI Automation Software</option>
               </select>

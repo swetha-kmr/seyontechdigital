@@ -1,4 +1,4 @@
-import { GraduationCap, Building2, Stethoscope, Vote, Store, UserCheck } from "lucide-react";
+import { GraduationCap, Building2, Stethoscope,  Store, UserCheck } from "lucide-react";
 export default function Industries() {
   return (
     <section className="industries" id="industries">
@@ -45,7 +45,7 @@ export default function Industries() {
         </div>
 
         {/* 4. Political */}
-        <div className="industry-card political-bg">
+        {/* <div className="industry-card political-bg">
           <div className="industry-overlay"></div>
           <div className="industry-card-inner">
             <div className="industry-icon-wrapper #8b5cf6">
@@ -54,7 +54,7 @@ export default function Industries() {
             <h3>Political Campaigns</h3>
             <p>Election strategy and outreach</p>
           </div>
-        </div>
+        </div> */}
 
         {/* 5. Local Business */}
         <div className="industry-card local-bg">
