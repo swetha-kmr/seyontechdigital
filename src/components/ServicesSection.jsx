@@ -1,114 +1,116 @@
 import { Bot, Target, Share2, Layout } from "lucide-react";
 
+const services = [
+  {
+    icon: <Bot size={50} />,
+    title: "AI Automation Marketing",
+    desc: "Leverage AI to automate your marketing and sales processes for maximum efficiency.",
+    overlayTitle: "Key Features:",
+    features: [
+      "WhatsApp Automation for engagement",
+      "AI Chatbot for 24/7 support",
+      "CRM & Lead Management",
+      "AI-Based Follow-up Systems",
+    ],
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80",
+    imageAlt: "AI Automation",
+  },
+  {
+    icon: <Target size={50} />,
+    title: "Paid Ads Management",
+    desc: "Data-driven advertising campaigns that deliver measurable ROI.",
+    overlayTitle: "Channels & Strategy:",
+    features: [
+      "Google Ads for high-intent search",
+      "YouTube Lead Generation",
+      "Facebook & Instagram Precision",
+      "Transparent ROI Reporting",
+    ],
+    image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&q=80",
+    imageAlt: "Paid Ads",
+  },
+  {
+  icon: <Share2 size={50} />,
+  title: "Social Media Marketing",
+  desc: "Build a powerful brand presence across all social platforms.",
+  overlayTitle: "Brand Growth:",
+  features: [
+    "Tailored Content Strategy",
+    "Professional Poster & Video",
+    "Strategic Brand Positioning",
+   
+  ],
+
+  // NEW IMAGE
+  image:
+    "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1200&auto=format&fit=crop",
+
+  imageAlt: "Social Media Marketing",
+},
+
+{
+  icon: <Layout size={50} />,
+  title: "Website & Funnels",
+  desc: "High-converting systems that turn visitors into customers.",
+  overlayTitle: "Web Solutions:",
+  features: [
+    "Professional Business Sites",
+    "Smart Lead Capture Systems",
+    "E-commerce Solutions",
+    "Conversion Optimization",
+  ],
+
+  // NEW IMAGE
+  image:
+    "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1200&auto=format&fit=crop",
+
+  imageAlt: "Website Development",
+}
+];
+
 export default function ServicesSection() {
   return (
     <section className="services" id="services">
-        <h2 className="fade-up">Our Services</h2>
-        <p className="fade-up delay-1">
-          Everything you need to grow your business with digital & AI solutions
-        </p>
+      <h2 className="fade-up">Our Services</h2>
+      <p className="fade-up delay-1">
+        Everything you need to grow your business with digital & AI solutions
+      </p>
 
-        <div className="services-grid">
-
-          {/* CARD */}
-          <div className="services-grid main-services">
-            {/* AI Automation */}
-            <div className="service-card interactive">
+      <div className="services-grid">
+        <div className="services-grid main-services">
+          {services.map((service, index) => (
+            <div className="service-card interactive" key={index}>
               <div className="card-inner">
+
+                {/* Default visible content */}
                 <div className="card-top">
-                  <div className="icon-box blue">
-                    <Bot size={50} />
-                  </div>
-                  <h3>AI Automation Marketing</h3>
-                  <p className="main-desc">
-                    Leverage AI to automate your marketing and sales processes for maximum efficiency.
-                  </p>
+                  <div className="icon-box blue">{service.icon}</div>
+                  <h3>{service.title}</h3>
+                  <p className="main-desc">{service.desc}</p>
                 </div>
 
+                {/* Hover overlay with image + features */}
                 <div className="card-overlay">
-                  <h4>Key Features:</h4>
-                  <ul>
-                    <li>WhatsApp Automation for engagement</li>
-                    <li>AI Chatbot for 24/7 support</li>
-                    <li>CRM & Lead Management</li>
-                    <li>AI-Based Follow-up Systems</li>
-                  </ul>
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    className="card-overlay-img"
+                  />
+                  <div className="card-overlay-content">
+                    <h4>{service.overlayTitle}</h4>
+                    <ul>
+                      {service.features.map((f, i) => (
+                        <li key={i}>{f}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
+
               </div>
             </div>
-
-            {/* Paid Ads */}
-            <div className="service-card interactive">
-              <div className="card-inner">
-                <div className="card-top">
-                  <div className="icon-box blue">
-                    <Target size={50} />
-                  </div>
-                  <h3>Paid Ads Management</h3>
-                  <p className="main-desc">Data-driven advertising campaigns that deliver measurable ROI.</p>
-                </div>
-
-                <div className="card-overlay">
-                  <h4>Channels & Strategy:</h4>
-                  <ul>
-                    <li>Google Ads for high-intent search</li>
-                    <li>YouTube Lead Generation</li>
-                    <li>Facebook & Instagram Precision</li>
-                    <li>Transparent ROI Reporting</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Media */}
-            <div className="service-card interactive">
-              <div className="card-inner">
-                <div className="card-top">
-                  <div className="icon-box blue">
-                    <Share2 size={50} />
-                  </div>
-                  <h3>Social Media Marketing</h3>
-                  <p className="main-desc">Build a powerful brand presence across all social platforms.</p>
-                </div>
-
-                <div className="card-overlay">
-                  <h4>Brand Growth:</h4>
-                  <ul>
-                    <li>Tailored Content Strategy</li>
-                    <li>Professional Poster & Video</li>
-                    <li>Strategic Brand Positioning</li>
-                    <li>Complete Page Management</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Website & Funnels */}
-            <div className="service-card interactive">
-              <div className="card-inner">
-                <div className="card-top">
-                  <div className="icon-box blue">
-                    <Layout size={50} />
-                  </div>
-                  <h3>Website & Funnels</h3>
-                  <p className="main-desc">High-converting systems that turn visitors into customers.</p>
-                </div>
-
-                <div className="card-overlay">
-                  <h4>Web Solutions:</h4>
-                  <ul>
-                    <li>Professional Business Sites</li>
-                    <li>Smart Lead Capture Systems</li>
-                    <li>E-commerce Solutions</li>
-                    <li>Conversion Optimization</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
-
-    
+      </div>
+    </section>
   );
 }
