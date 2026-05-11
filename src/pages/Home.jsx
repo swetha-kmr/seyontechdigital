@@ -14,11 +14,14 @@ import "../styles/global.css";
 
 
 
+
 export default function Home() {
   return (
     <>
       <Navbar />
+      
       <HeroSection />
+     
       <AboutSection />
       <ChatBot />
       <LogoScroll />
@@ -29,6 +32,7 @@ export default function Home() {
       <ResultsSection />
       <ContactSection />
       <Footer />
+     
     </>
   );
 }

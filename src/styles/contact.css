@@ -674,3 +674,16 @@
 .form-group input[type="time"]::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
 }
+
+.error-text {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border: 1px solid #ff4d4f;
+}
