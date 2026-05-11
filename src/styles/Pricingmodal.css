@@ -1,5 +1,4 @@
 /* ── PricingModal.css ── uses your existing CSS variables ── */
-
 .pm-backdrop {
   position: fixed;
   inset: 0;
@@ -21,9 +20,9 @@
 .pm-modal {
   background: var(--bg-card);           /* #16161d */
   border-radius: 20px;
-  width: 100%;
-  max-width: 700px;
-  max-height: 92vh;
+  width: 190%;
+  max-width: 900px;
+  max-height:990vh;
   overflow-y: auto;
   position: relative;
   border: 1px solid rgba(139, 92, 246, 0.22);
@@ -313,4 +312,17 @@
   .pm-plans { grid-template-columns: 1fr; }
   .pm-row   { grid-template-columns: 1fr; }
   .pm-form-wrap { padding: 1.25rem; }
+}
+
+.pm-error {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}
+
+.pm-field input.error,
+.pm-field textarea.error {
+  border: 1px solid #ff4d4f !important;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.1);
 }
