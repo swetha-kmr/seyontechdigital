@@ -20,8 +20,7 @@
 .pm-modal {
   background: var(--bg-card);           /* #16161d */
   border-radius: 20px;
-  width: 190%;
-  max-width: 900px;
+ width: 1000%;
   max-height:990vh;
   overflow-y: auto;
   position: relative;
@@ -31,8 +30,8 @@
 }
 
 @keyframes pmSlideUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px);}
+  to   { opacity: 1; transform: translateY(0);}
 }
 
 /* Purple top accent line */

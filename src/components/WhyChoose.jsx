@@ -1,5 +1,6 @@
 import {BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3,
   TrendingUp, CircleDollarSign} from "lucide-react";
+  
 
 export default function WhyChoose() {
   return (

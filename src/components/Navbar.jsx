@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <>
       <header className="navbar">
-        
+
         {/* LEFT LOGO */}
         <div className="nav-left">
           <img src={logo8} alt="logo" className="logo-img" />
@@ -26,16 +26,9 @@ export default function Navbar() {
 
         {/* RIGHT SIDE */}
         <div className="nav-right">
-
-          {/* DESKTOP BUTTON */}
-          <button
-            className="btn"
-            onClick={() => setShowModal(true)}
-          >
+          <button className="btn" onClick={() => setShowModal(true)}>
             Get Started
           </button>
-
-          {/* HAMBURGER */}
           <button
             className={`hamburger ${menuOpen ? "open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -44,42 +37,25 @@ export default function Navbar() {
             <span></span>
             <span></span>
           </button>
-
         </div>
+
       </header>
 
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <a href="#home" onClick={() => setMenuOpen(false)}>
-          Home
-        </a>
-
-        <a href="#about" onClick={() => setMenuOpen(false)}>
-          About
-        </a>
-
-        <a href="#services" onClick={() => setMenuOpen(false)}>
-          Services
-        </a>
-
-        <a href="#contact" onClick={() => setMenuOpen(false)}>
-          Contact
-        </a>
-
+        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+        <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         <button
           className="mobile-cta"
-          onClick={() => {
-            setShowModal(true);
-            setMenuOpen(false);
-          }}
+          onClick={() => { setShowModal(true); setMenuOpen(false); }}
         >
           Get Started
         </button>
       </div>
 
-      {showModal && (
-        <PricingModal onClose={() => setShowModal(false)} />
-      )}
+      {showModal && <PricingModal onClose={() => setShowModal(false)} />}
     </>
   );
 }
