@@ -105,7 +105,6 @@ export default function ServicesSection() {
                     </ul>
                   </div>
                 </div>
-
               </div>
             </div>
           ))}
