@@ -217,63 +217,6 @@
 }
 
 /* =========================
-   OVERLAY
-========================= */
-.card-overlay {
-  position: absolute;
-  inset: 0;
-
-  opacity: 0;
-  transform: scale(1.08);
-
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-
-  z-index: 3;
-}
-
-.service-card:hover .card-overlay {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* =========================
-   IMAGE
-========================= */
-.card-overlay-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.8s ease;
-}
-
-.service-card:hover .card-overlay-img {
-  transform: scale(1.12);
-}
-
-/* Dark Gradient */
-.card-overlay::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(7, 7, 10, 0.98) 35%,
-      rgba(7, 7, 10, 0.5) 100%
-    );
-
-  z-index: 1;
-}
-
-/* =========================
-   OVERLAY CONTENT
-========================= */
-/* OVERLAY */
-/* =========================
    CARD OVERLAY
 ========================= */
 .card-overlay {
@@ -302,7 +245,7 @@
 ========================= */
 .card-image-wrap {
   width: 100%;
-  height: 180px; /* PERFECT laptop size */
+  height: 180px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -322,7 +265,7 @@
 }
 
 /* =========================
-   CONTENT
+   OVERLAY CONTENT
 ========================= */
 .card-overlay-content {
   flex: 1;
@@ -334,7 +277,6 @@
   justify-content: flex-start;
 }
 
-/* TITLE */
 .card-overlay-content h4 {
   font-size: 1.3rem;
   font-weight: 700;
@@ -346,7 +288,6 @@
   color: #ffffff;
 }
 
-/* FEATURES */
 .card-overlay-content ul {
   list-style: none;
   padding: 0;
@@ -366,9 +307,6 @@
   line-height: 1.5;
 }
 
-/* =========================
-   LAPTOP PERFECT HEIGHT
-========================= */
 .service-card {
   height: 400px;
 }
@@ -377,30 +315,6 @@
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-
-  .service-card {
-    height: 380px;
-  }
-
-  .card-image-wrap {
-    height: 160px;
-  }
-
-  .card-overlay-content h4 {
-    font-size: 1.1rem;
-  }
-
-  .card-overlay-content ul li {
-    font-size: 0.88rem;
-    padding: 10px 0;
-  }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-
   .services {
     padding: 80px 5%;
   }
@@ -429,4 +343,54 @@
     font-size: 1.3rem;
   }
 
+  .card-image-wrap {
+    height: 160px;
+  }
+
+  .card-overlay-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .card-overlay-content ul li {
+    font-size: 0.88rem;
+    padding: 10px 0;
+  }
+}
+
+/* =============================================
+   WHY CHOOSE SECTION — alignment fixes
+   (all why-card styles live in global.css;
+    only layout overrides needed here)
+============================================= */
+.why-section {
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+
+  align-items: stretch;
+}
+
+/* ── Tablet: 2 columns ── */
+@media (max-width: 1024px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile: 1 column ── */
+@media (max-width: 640px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    padding: 30px 0;
+  }
 }

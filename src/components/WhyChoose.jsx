@@ -1,138 +1,93 @@
-import {BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3,
-  TrendingUp, CircleDollarSign} from "lucide-react";
-  
+import {
+  BrainCircuit, Headset, Filter, Smartphone,
+  RefreshCw, BarChart3, TrendingUp, CircleDollarSign
+} from "lucide-react";
+import "../styles/global.css";
+
+const cards = [
+  {
+    icon: <BrainCircuit size={28} />,
+    color: "purple",
+    title: "AI-Based Strategy",
+    desc: "We use AI-driven insights to maximize your marketing performance",
+    list: ["Smart campaign optimization", "AI-driven targeting", "Higher ROI focus", "Predictive analytics"],
+  },
+  {
+    icon: <Headset size={28} />,
+    color: "blue",
+    title: "Dedicated Support",
+    desc: "We stay with you at every step of your growth journey",
+    list: ["1-on-1 communication", "Fast response time", "Expert consultation", "Ongoing support"],
+  },
+  {
+    icon: <Filter size={28} />,
+    color: "orange",
+    title: "Complete Funnel Setup",
+    desc: "We build systems that convert visitors into paying customers",
+    list: ["Landing pages", "Lead capture systems", "Automation flows", "Conversion optimization"],
+  },
+  {
+    icon: <Smartphone size={28} />,
+    color: "green",
+    title: "Mobile CRM Access",
+    desc: "Manage your leads anytime, anywhere with ease",
+    list: ["Real-time lead tracking", "Mobile-friendly CRM", "Instant notifications", "Easy pipeline management"],
+  },
+  {
+    icon: <RefreshCw size={28} />,
+    color: "pink",
+    title: "Scalable Automation",
+    desc: "Systems designed to grow with your business without extra workload",
+    list: ["Auto lead nurturing flows", "Smart follow-up sequences", "Workflow automation", "Business scaling systems"],
+  },
+  {
+    icon: <BarChart3 size={28} />,
+    color: "yellow",
+    title: "Transparent Reporting",
+    desc: "Know exactly where your money goes and what you get",
+    list: ["Weekly reports", "Real-time analytics", "Performance tracking", "Clear insights"],
+  },
+  {
+    icon: <TrendingUp size={28} />,
+    color: "violet",
+    title: "Data-Driven Growth",
+    desc: "Every decision is backed by real performance data and analytics",
+    list: ["Advanced analytics tracking", "Conversion optimization insights", "Behavior-based targeting", "Performance forecasting"],
+  },
+  {
+    icon: <CircleDollarSign size={28} />,
+    color: "blue",
+    title: "Affordable Pricing",
+    desc: "Premium services without premium pricing",
+    list: ["Flexible plans", "Startup-friendly", "No hidden costs", "High value delivery"],
+  },
+];
 
 export default function WhyChoose() {
   return (
-    <section className="services" id="why">
-        <h2 className="fade-up">Why Choose Us</h2>
-        <p className="fade-up delay-1">
-          We combine technology, expertise, and dedication to deliver exceptional results
-        </p>
+    <section className="services why-section" id="why">
+      <h2 className="fade-up">Why Choose Us</h2>
+      <p className="fade-up delay-1">
+        We combine technology, expertise, and dedication to deliver exceptional results
+      </p>
 
-
-        <div className="why-choose-grid">
-          {/* AI Strategy */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <BrainCircuit size={40} />
+      <div className="why-choose-grid">
+        {cards.map((card, i) => (
+          <div className="why-card" key={i}>
+            {/* ✅ FIXED: correct named color class */}
+            <div className={`why-icon-box ${card.color}`}>
+              {card.icon}
             </div>
-            <h3>AI-Based Strategy</h3>
-            <p>We use AI-driven insights to maximize your marketing performance</p>
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
             <ul className="why-list">
-              <li>Smart campaign optimization</li>
-              <li>AI-driven targeting</li>
-              <li>Higher ROI focus</li>
-              <li>Predictive analytics</li>
+              {card.list.map((item, j) => (
+                <li key={j}>{item}</li>
+              ))}
             </ul>
           </div>
-
-          {/* Dedicated Support */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <Headset size={40} />
-            </div>
-            <h3>Dedicated Support</h3>
-            <p>We stay with you at every step of your growth journey</p>
-            <ul className="why-list">
-              <li>1-on-1 communication</li>
-              <li>Fast response time</li>
-              <li>Expert consultation</li>
-              <li>Ongoing support</li>
-            </ul>
-          </div>
-
-          {/* Funnel Setup */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <Filter size={40} />
-            </div>
-            <h3>Complete Funnel Setup</h3>
-            <p>We build systems that convert visitors into paying customers</p>
-            <ul className="why-list">
-              <li>Landing pages</li>
-              <li>Lead capture systems</li>
-              <li>Automation flows</li>
-              <li>Conversion optimization</li>
-            </ul>
-          </div>
-
-          {/* Mobile CRM */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <Smartphone size={40} />
-            </div>
-            <h3>Mobile CRM Access</h3>
-            <p>Manage your leads anytime, anywhere with ease</p>
-            <ul className="why-list">
-              <li>Real-time lead tracking</li>
-              <li>Mobile-friendly CRM</li>
-              <li>Instant notifications</li>
-              <li>Easy pipeline management</li>
-            </ul>
-          </div>
-
-          {/* Scalable Automation */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <RefreshCw size={40} />
-            </div>
-            <h3>Scalable Automation</h3>
-            <p>Systems designed to grow with your business without extra workload</p>
-            <ul className="why-list">
-              <li>Auto lead nurturing flows</li>
-              <li>Smart follow-up sequences</li>
-              <li>Workflow automation</li>
-              <li>Business scaling systems</li>
-            </ul>
-          </div>
-
-          {/* Reporting */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <BarChart3 size={40} />
-            </div>
-            <h3>Transparent Reporting</h3>
-            <p>Know exactly where your money goes and what you get</p>
-            <ul className="why-list">
-              <li>Weekly reports</li>
-              <li>Real-time analytics</li>
-              <li>Performance tracking</li>
-              <li>Clear insights</li>
-            </ul>
-          </div>
-
-          {/* Data Growth */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <TrendingUp size={40} />
-            </div>
-            <h3>Data-Driven Growth</h3>
-            <p>Every decision is backed by real performance data and analytics</p>
-            <ul className="why-list">
-              <li>Advanced analytics tracking</li>
-              <li>Conversion optimization insights</li>
-              <li>Behavior-based targeting</li>
-              <li>Performance forecasting</li>
-            </ul>
-          </div>
-
-          {/* Affordable Pricing */}
-          <div className="why-card">
-            <div className="why-icon-box #8b5cf6">
-              <CircleDollarSign size={40} />
-            </div>
-            <h3>Affordable Pricing</h3>
-            <p>Premium services without premium pricing</p>
-            <ul className="why-list">
-              <li>Flexible plans</li>
-              <li>Startup-friendly</li>
-              <li>No hidden costs</li>
-              <li>High value delivery</li>
-            </ul>
-          </div>
-        </div>
-
-      </section>
+        ))}
+      </div>
+    </section>
   );
 }

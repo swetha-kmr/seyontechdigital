@@ -9,7 +9,7 @@ import ProcessSection from "../components/ProcessSection";
 import ResultsSection from "../components/ResultsSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
-import ChatBot from "../components/ChatBot";
+
 import "../styles/global.css";
 
 
@@ -19,11 +19,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      
       <HeroSection />
-     
       <AboutSection />
-      <ChatBot />
+   
       <LogoScroll />
       <ServicesSection />
       <WhyChoose />
