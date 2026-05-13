@@ -66,27 +66,7 @@
 
 /* ─── WHATSAPP BUTTON ───────────────────────────────── */
 
-.whatsapp-toggle {
-  position: fixed;
-  right: var(--toggle-right);
-  bottom: var(--wa-bottom);
-  width: var(--wa-size);
-  height: var(--wa-size);
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 32px;
-  z-index: 99999;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  text-decoration: none;
-  transition: var(--transition);
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-}
+
 
 .whatsapp-toggle:hover {
   transform: scale(1.08);

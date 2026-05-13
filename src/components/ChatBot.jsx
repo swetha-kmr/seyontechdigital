@@ -1,5 +1,4 @@
 // src/components/ChatBot.jsx
-
 import { useState, useEffect, useRef } from "react";
 import "../styles/chatbot.css";
 import { FiArrowUp, FiX } from "react-icons/fi";
