@@ -401,6 +401,7 @@
 
   .contact-info {
     width: 44%;
+    margin-bottom: 30px;
   }
 
   .contact-header h2 {
@@ -455,6 +456,7 @@
     font-size: 1.4rem !important;
     margin-bottom: 18px !important;
     text-align: left !important;
+    margin-left: 60px;
   }
 
   .info-item {
@@ -465,6 +467,7 @@
     margin-bottom: 14px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    margin-left: 20px;
   }
 
   .info-icon {

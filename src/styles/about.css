@@ -102,10 +102,9 @@
 
 .services h2 {
   font-size: 36px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-weight: 700;
 }
-
 .services p {
   font-size: 16px;
   color: #cbd5e1;
@@ -137,18 +136,25 @@
 .card-inner {
   padding: 40px;
   height: 100%;
+
   display: flex;
   flex-direction: column;
-}
+  align-items: center;
+  justify-content: center;
 
+  text-align: center;
+}
 .icon-box {
   width: 60px;
   height: 60px;
+
   border-radius: 25px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+
+  margin: 0 auto 24px;
 }
 
 .icon-box.purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
@@ -197,6 +203,17 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.service-card h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.main-desc {
+  text-align: center;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
 /* ─── WHY CHOOSE US ──────────────────────────── */
 
 .why-choose-grid {
@@ -207,7 +224,6 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .why-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -216,8 +232,8 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;        /* ✅ was flex-start — icon auto margin needs this */
+  text-align: center;         /* ✅ center heading and desc */
   min-height: 390px;
 }
 
@@ -227,14 +243,15 @@
 }
 
 .why-icon-box {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 0 auto 24px;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .why-card:hover .why-icon-box {
@@ -245,19 +262,25 @@
   font-size: 1.1rem;
   color: #fff;
   margin-bottom: 10px;
+  width: 100%;               /* ✅ removed margin-left: 30px */
 }
+
 
 .why-card p {
   font-size: 0.9rem;
   color: #94a3b8;
   margin-bottom: 15px;
+  margin-top: 10px;
   line-height: 1.5;
+  width: 100%;               /* ✅ removed margin-left: 30px */
 }
 
 .why-list {
   list-style: none;
   padding: 0;
-  margin-top: auto;
+  margin-top: auto;          /* ✅ removed margin-left: 7px */
+  width: 100%;
+  text-align: left;          /* ✅ keep bullets left-aligned even with centered card */
 }
 
 .why-list li {
@@ -275,90 +298,6 @@
   left: 0;
   color: #8b5cf6;
   font-weight: bold;
-}
-
-/* ── TABLET (≤ 992px) ───────────────────────── */
-
-@media (max-width: 992px) {
-  .why-choose-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    padding: 40px 20px;
-  }
-
-  .why-card {
-    min-height: unset;
-    padding: 28px;
-  }
-}
-
-/* ── MOBILE (≤ 600px) ───────────────────────── */
-
-@media (max-width: 600px) {
-  .why-choose-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 30px 16px;
-  }
-
-  .why-card {
-    min-height: unset;
-    padding: 24px;
-    border-radius: 16px;
-  }
-
-  /* Disable hover lift on touch */
-  .why-card:hover {
-    transform: none;
-  }
-
-  .why-icon-box {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 16px;
-  }
-
-  .why-card h3 {
-    font-size: 1rem;
-  }
-
-  .why-card p {
-    font-size: 0.875rem;
-  }
-
-  .why-list li {
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-  }
-}
-
-/* ── VERY SMALL (≤ 380px) ───────────────────── */
-
-@media (max-width: 380px) {
-  .why-choose-grid {
-    padding: 24px 12px;
-    gap: 12px;
-  }
-
-  .why-card {
-    padding: 20px;
-  }
-
-  .why-card h3 {
-    font-size: 0.95rem;
-  }
-
-  .why-card p {
-    font-size: 0.82rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .why-choose-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px;
-    padding: 30px 16px;
-  }
 }
 /* ─── INDUSTRIES ─────────────────────────────── */
 .industries {
@@ -569,6 +508,144 @@
   border-color: #8B5CF6;
 }
 
+/* ───────────────── TABLET ───────────────── */
+
+@media (max-width: 992px) {
+  .process {
+    padding: 80px 5%;
+  }
+
+  .process h2 {
+    font-size: 34px;
+  }
+
+  .process-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .circle {
+    width: 75px;
+    height: 75px;
+  }
+
+  .circle svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ───────────────── MOBILE ───────────────── */
+
+@media (max-width: 768px) {
+  .process {
+    padding: 70px 20px;
+  }
+
+  .process h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .process-sub {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  /* ── Vertical Timeline ── */
+
+  .process-line {
+    flex-direction: column;       /* stack circles vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 40px;
+    min-height: 420px;            /* gives the absolute line height to fill */
+    padding: 10px 0;
+  }
+
+  .process-line .line {
+    position: absolute;
+    left: 50%;
+    top: 0;                       /* full height, no offset */
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;                 /* fills the min-height of parent */
+    background: linear-gradient(to bottom, #3B82F6, #8B5CF6);
+    z-index: 0;
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    z-index: 1;                   /* sits on top of vertical line */
+  }
+
+  .circle svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* ── Cards: single column ── */
+
+  .process-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .process-card {
+    padding: 20px 18px;
+  }
+
+  .process-card span {
+    font-size: 18px;
+  }
+
+  .process-card h4 {
+    font-size: 14px;
+  }
+
+  .process-card p {
+    font-size: 12px;
+  }
+}
+
+/* ───────────────── SMALL MOBILE ───────────────── */
+
+@media (max-width: 480px) {
+  .process {
+    padding: 60px 16px;
+  }
+
+  .process h2 {
+    font-size: 24px;
+  }
+
+  .process-sub {
+    font-size: 13px;
+  }
+
+  .process-line {
+    gap: 22px;
+    min-height: 380px;
+  }
+
+  .circle {
+    width: 62px;
+    height: 62px;
+  }
+
+  .circle svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .process-card {
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+}
 /* ─── RESULTS ────────────────────────────────── */
 .results-section {
   padding: 80px 8%;
@@ -578,21 +655,42 @@
 
 .results-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
   align-items: center;
-  margin-bottom: 60px;
-  gap: 40px;
+  justify-content: center;
+
+  text-align: center;
+
+  margin-bottom: 55px;
+
+  gap: 18px;
 }
 
 .results-header h2 {
   font-size: 48px;
   font-weight: 700;
+    margin-right: 20px;
+
+  line-height: 1.2;
+
+  margin: 0;
+
+  text-align: center;
 }
 
 .results-header p {
-  max-width: 500px;
+  max-width: 700px;
+
   color: #94a3b8;
-  line-height: 1.6;
+
+  line-height: 1.8;
+
+  font-size: 16px;
+
+  margin: 0 auto;
+
+  text-align: center;
 }
 
 .results-grid {
@@ -603,16 +701,32 @@
 
 .result-card {
   background: #0f172a;
-  padding: 40px 30px;
+
+  padding: 36px 28px;
+
   border-radius: 20px;
+
   transition: 0.3s ease;
+
   border: 1px solid rgba(255, 255, 255, 0.05);
+
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 210px;
 }
 
 .result-card:hover {
   transform: translateY(-8px);
   border-color: rgba(139, 92, 246, 0.5);
+}
+.result-card h4,
+.result-card p {
+  text-align: center;
 }
 
 .result-card h3 {
@@ -642,7 +756,7 @@
   .why-choose-grid     { grid-template-columns: repeat(2, 1fr); }
   .industries-grid     { grid-template-columns: repeat(2, 1fr); }
   .main-services       { grid-template-columns: repeat(2, 1fr); }
-  .process-cards       { grid-template-columns: repeat(3, 1fr); }
+
   .results-grid        { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -654,6 +768,12 @@
     text-align: center;
     min-height: auto;
   }
+  @media (max-width: 768px) {
+    .results-header h2 {
+        font-size: 2rem;
+        margin-left: 35px;
+    }
+}
   .hero-right { align-items: center; }
   .hero-right h1 { font-size: 1.5rem; }
 
@@ -678,10 +798,10 @@
   .industries-header h2 { font-size: 2rem; }
   .industry-card { height: 280px; }
 
-  .process { padding: 60px 5%; }
+
+  
   .process h2 { font-size: 28px; }
-  .process-line { flex-direction: column; gap: 20px; align-items: center; }
-  .process-line .line { display: none; }
+
   .circle { width: 65px; height: 65px; }
   .process-cards { grid-template-columns: 1fr; gap: 15px; }
   .process-card { text-align: center; }
@@ -733,3 +853,4 @@
   color: #8b5cf6;
   font-weight: bold;
 } */
+ 
