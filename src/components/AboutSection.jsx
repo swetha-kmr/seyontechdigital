@@ -13,11 +13,12 @@ export default function AboutSection() {
         </div>
 
         <div className="hero-right">
+
           {/* ABOUT */}
           <h1>Seyon Tech is a results-driven digital media solutions dedicated to helping businesses generate quality leads, automate sales processes, and scale their operations through cutting-edge AI-powered marketing solutions</h1>
-          <p>
+           <p>
             We combine proven digital marketing strategies with advanced automation technology to deliver measurable results. From paid advertising to AI chatbots and complete funnel development, we provide end-to-end solutions that transform your marketing efforts into a predictable revenue engine..
-          </p>
+           </p>
           <a href="#services">
             <button className="btn btn-primary">Let’s Connect</button>
           </a>

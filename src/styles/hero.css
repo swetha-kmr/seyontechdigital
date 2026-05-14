@@ -167,3 +167,7 @@
     font-size: 0.9rem;
   }
 }
+
+.btn-primary-outlined {
+  text-decoration: none;
+}

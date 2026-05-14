@@ -1,10 +1,25 @@
 import "../styles/hero.css";
 import heroVideo from "../assets/hero.mp4";
+import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
+
   return (
     <section className="hero-container" id="home">
-      <video autoPlay muted loop className="hero-bg-video">
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        className="hero-bg-video"
+      >
         <source src={heroVideo} type="video/mp4" />
       </video>
 
@@ -26,9 +41,9 @@ export default function HeroSection() {
         </p>
 
         <div className="hero-btns">
-          <button className="btn-primary-outlined">
-            Let's Talk →
-          </button>
+        <a href="#contact" className="btn-primary-outlined">
+  Let's Talk →
+</a>
 
           <button className="btn-primary-outlined">
             View Our Work

@@ -1,4 +1,8 @@
 import { GraduationCap, Building2, Stethoscope,  Store, UserCheck } from "lucide-react";
+import localbusinessImg from "../assets/logos/localbusiness.png";
+import personalbrandImg from "../assets/logos/personalbrand.jpg";
+import franchImg from "../assets/logos/franch.png";
+import { Network } from "lucide-react";
 export default function Industries() {
   return (
     <section className="industries" id="industries">
@@ -56,31 +60,56 @@ export default function Industries() {
           </div>
         </div> */}
 
-        {/* 5. Local Business */}
-        <div className="industry-card local-bg">
-          <div className="industry-overlay"></div>
-          <div className="industry-card-inner">
-            <div className="industry-icon-wrapper #8b5cf6">
-              <Store size={40} />
-            </div>
-            <h3>Local Businesses</h3>
-            <p>Small shops and local startups</p>
-          </div>
-        </div>
+        {/* Local Business */}
+<div
+  className="industry-card local-bg"
+  style={{ "--bg-image": `url(${localbusinessImg})` }}
+>
+  <div className="industry-overlay"></div>
 
-        {/* 6. Personal Brand */}
-        <div className="industry-card personal-bg">
-          <div className="industry-overlay"></div>
-          <div className="industry-card-inner">
-            <div className="industry-icon-wrapper #8b5cf6">
-              <UserCheck size={40} />
-            </div>
-            <h3>Personal Brands</h3>
-            <p>Influencers, coaches, and consultants</p>
+  <div className="industry-card-inner">
+    <div className="industry-icon-wrapper">
+      <Store size={40} />
+    </div>
 
+    <h3>Local Businesses</h3>
+    <p>Small shops and local startups</p>
+  </div>
+</div>
 
-          </div>
-        </div>
+{/* Personal Brand */}
+<div
+  className="industry-card personal-bg"
+  style={{ "--bg-image": `url(${personalbrandImg})` }}
+>
+  <div className="industry-overlay"></div>
+  <div className="industry-card-inner">
+    <div className="industry-icon-wrapper">
+      <UserCheck size={40} />
+    </div>
+    <h3>Personal Brands</h3>
+    <p>Influencers, coaches, and consultants</p>
+  </div>
+</div>
+{/* Franchise Business */}
+<div
+  className="industry-card"
+  style={{
+    "--bg-image": `url(${franchImg})`,
+  }}
+>
+  <div className="industry-overlay"></div>
+
+  <div className="industry-card-inner">
+    <div className="industry-icon-wrapper">
+      <Network size={40} />
+    </div>
+
+    <h3>Franchise Businesses</h3>
+
+    <p>Multi-location brands and franchise growth</p>
+  </div>
+</div>
       </div>
     </section>
   );
