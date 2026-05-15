@@ -1,6 +1,7 @@
 import "../styles/hero.css";
 import heroVideo from "../assets/hero.mp4";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   const videoRef = useRef(null);
@@ -27,7 +28,7 @@ export default function HeroSection() {
 
       <div className="hero-content">
         <div className="hero-badge">
-          ✨ AWARD-WINNING CREATIVE AGENCY
+           AWARD-WINNING CREATIVE AGENCY
         </div>
 
         <h1 className="hero-title">
@@ -44,10 +45,9 @@ export default function HeroSection() {
         <a href="#contact" className="btn-primary-outlined">
   Let's Talk →
 </a>
-
-          <button className="btn-primary-outlined">
-            View Our Work
-          </button>
+        <Link to="/work" className="btn-primary-outlined">
+  View Our Work →
+</Link>
         </div>
       </div>
     </section>

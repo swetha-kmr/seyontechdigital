@@ -130,7 +130,7 @@ _Sent from Seyon Tech website_
             </div>
             <div className="info-text">
               <strong>Email</strong>
-              <span>info@seyontech.com</span>
+              <span>info@seyontech.in</span>
             </div>
           </div>
 

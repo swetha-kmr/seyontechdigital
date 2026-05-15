@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo8 from "../assets/logos/logo8.webp";
 import PricingModal from "./PricingModal";
 import "../styles/navbar.css";
@@ -6,6 +7,27 @@ import "../styles/navbar.css";
 export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e, anchor) => {
+    e.preventDefault();
+    setMenuOpen(false);
+
+    if (location.pathname === "/") {
+      // Already on home — just scroll to section
+      const el = document.querySelector(anchor);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // On another page — navigate home, then scroll after page loads
+      navigate("/");
+      // Small delay to let the home page render before scrolling
+      setTimeout(() => {
+        const el = document.querySelector(anchor);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
 
   return (
     <>
@@ -18,10 +40,10 @@ export default function Navbar() {
 
         {/* DESKTOP NAV */}
         <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+          <a href="#home"     onClick={(e) => handleNavClick(e, "#home")}>Home</a>
+          <a href="#about"    onClick={(e) => handleNavClick(e, "#about")}>About</a>
+          <a href="#services" onClick={(e) => handleNavClick(e, "#services")}>Services</a>
+          <a href="#contact"  onClick={(e) => handleNavClick(e, "#contact")}>Contact</a>
         </nav>
 
         {/* RIGHT SIDE */}
@@ -43,10 +65,10 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        <a href="#home"     onClick={(e) => handleNavClick(e, "#home")}>Home</a>
+        <a href="#about"    onClick={(e) => handleNavClick(e, "#about")}>About</a>
+        <a href="#services" onClick={(e) => handleNavClick(e, "#services")}>Services</a>
+        <a href="#contact"  onClick={(e) => handleNavClick(e, "#contact")}>Contact</a>
         <button
           className="mobile-cta"
           onClick={() => { setShowModal(true); setMenuOpen(false); }}
