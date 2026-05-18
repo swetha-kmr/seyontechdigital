@@ -1,3 +1,21 @@
+/* ───────────────── RESET ───────────────── */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ───────────────── NAVBAR ───────────────── */
 
 .navbar {
@@ -5,14 +23,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 8%;
+  padding: 28px 8%;
   background: #020617;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none;
+  margin-bottom: 0;
 }
-
 /* ───────────────── LOGO ───────────────── */
 
 .nav-left {
@@ -21,8 +39,8 @@
 }
 
 .logo-img {
-  width: 72px !important;
-  height: 72px;
+  width: 140px !important;
+  height: 40px;
   object-fit: contain;
   display: block;
 }
@@ -37,7 +55,7 @@
 
 .nav-links a {
   position: relative;
-  font-size: 17px;
+  font-size: 23px;
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
@@ -144,7 +162,7 @@
   overflow: hidden;
   pointer-events: none;
   transition: max-height 0.4s ease, padding 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+ border-bottom: none;
   position: sticky;
   top: 109px;
   z-index: 999;
@@ -222,7 +240,6 @@
     display: none;
   }
 
-  /* Hide desktop CTA on mobile — hamburger replaces it */
   .nav-right .btn {
     display: none;
   }
@@ -232,16 +249,7 @@
   }
 
   .logo-img {
-    width: 60px;
-    height: 60px;
+    width: 110px !important;
+    height: 32px;
   }
-}
-
-.navbar {
-  padding: 28px 8% !important;
-}
-
-.nav-links a {
-  font-size: 23px !important;
-   color: #ffffff !important;
 }

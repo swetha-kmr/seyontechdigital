@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import logo8 from "../assets/logos/logo8.webp";
+import seyoon from "../assets/logos/seyoon.png";
 import PricingModal from "./PricingModal";
 import "../styles/navbar.css";
 
@@ -34,8 +34,9 @@ export default function Navbar() {
       <header className="navbar">
 
         {/* LEFT LOGO */}
+        
         <div className="nav-left">
-          <img src={logo8} alt="logo" className="logo-img" />
+          <img src={seyoon} alt="logo" className="logo-img" />
         </div>
 
         {/* DESKTOP NAV */}
